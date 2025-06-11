@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+/* Configuración base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Componentes de la calculadora */
+.calculator {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 32px;
+  width: 375px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.display {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: right;
+  color: white;
+  font-family: 'Courier New', monospace;
+  min-height: 100px; /* Aumentamos la altura para acomodar ambas líneas */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.operation-display {
+  font-size: 16px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+  min-height: 20px; /* Altura fija para evitar saltos */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.main-display {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  line-height: 1;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  height: 64px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-number {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+}
+
+.btn-operator {
+  background: #f6ab3b;
+  color: white;
+}
+
+.btn-equals {
+  background: #10b935;
+  color: white;
+}
+
+.btn-special {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-zero {
+  grid-column: span 2;
+}
